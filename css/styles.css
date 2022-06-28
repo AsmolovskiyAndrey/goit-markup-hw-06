@@ -720,3 +720,8 @@ h1,h2,h3,p,ul{
     height: 20px;
     fill: currentColor;
 }
+
+/* не позволяет увеличить размер колонки комментария */
+textarea{
+    resize: none;
+}
