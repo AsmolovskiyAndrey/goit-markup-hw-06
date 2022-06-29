@@ -725,3 +725,48 @@ h1,h2,h3,p,ul{
 textarea{
     resize: none;
 }
+.form{
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    outline: solid 2px red;
+    background-color: rgb(141, 174, 180);
+    color: #000000;
+}
+.form-field{
+    display: flex;
+    flex-direction: column;
+    outline: solid 1px blue;
+    margin: 0 0 20px 0;
+}
+
+.form-field label,
+.form-field input{
+    padding: 5px 10px;
+}
+.form-field input::placeholder{
+    color: #2196F3;
+}
+.form-group{
+    outline: solid 1px tomato;
+    display: flex;
+    flex-direction: column;
+}
+.group-li{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.form-group label{
+    padding: 10px;
+}
+.group-link{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.form-group input[type='checkbox']{
+    /* width: 30px;
+    height: 30px; */
+}
