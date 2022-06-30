@@ -663,6 +663,7 @@ h1,h2,h3,p,ul{
 .footer-box-adress{
     display: flex;
     flex-direction: column;
+    min-width: 231px;
     margin-right: 70px;
 }
 .footer-link{
@@ -683,6 +684,7 @@ h1,h2,h3,p,ul{
     display: flex;
     flex-direction: column;
     margin-top: 12px;
+    margin-right: 93px;
 }
 .footer-title{
     font-size: 14px;
@@ -720,6 +722,73 @@ h1,h2,h3,p,ul{
     height: 20px;
     fill: currentColor;
 }
+.footer-form{
+    min-width: 570px;
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+}
+.footer-form-field{
+    display: flex;
+    flex-direction: row;
+}
+.footer-form-title{
+    margin-bottom: 20px;
+
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: var(--text-bgc-color);
+}
+.footer-form-mail{
+    display: flex;
+    flex-direction: column;
+    width: 358px;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+    margin-right: 12px;
+}
+.footer-form-mail label,
+.footer-form-mail input{
+    font-size: 16px;
+    line-height: 1.25;
+    background-color: inherit;
+    color: var(--adress-capacity);
+    padding: 0;
+    border: none;
+}
+.footer-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 200px;
+    height: 50px;
+
+    background: #2196F3;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+}
+.footer-button-text{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+    color: var(--text-bgc-color);
+
+    margin-right: 10px;
+    padding: 0;
+    border: none;
+    background-color: inherit;
+}
+.footer-form-icon{
+    fill: var(--text-bgc-color);
+}
+
+
+
 
 /* не позволяет увеличить размер колонки комментария */
 textarea{
