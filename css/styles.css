@@ -32,10 +32,14 @@ body{
     --icon-social-hover:rgba(255, 255, 255, 1);
     --bg-social-footer: rgba(255, 255, 255, 0.1);
     --adress-capacity: rgba(255, 255, 255, 0.6);
+    --border-footer: rgba(255, 255, 255, 0.3);
     --overlay-text: rgba(33, 150, 243, 0.9);
     --bg-color-backdrop: rgba(0, 0, 0, 0.2);
+    --color-place-holder:rgba(117, 117, 117, 0.5);
+    --shadow: rgba(0, 0, 0, 0.15);
 
     --item: 3;
+    --animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /* Убрал точки со списков ul */
 .list{
@@ -136,7 +140,7 @@ h1,h2,h3,p,ul{
     letter-spacing: 0.02em;
     color: var(--title-main-color);
 
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color var(--animation);
 }
 .nav-link.active{
     color: var(--text-secondary-color)
@@ -199,7 +203,7 @@ h1,h2,h3,p,ul{
     padding-bottom: 32px;
     color: var(--icon-header);
 
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color var(--animation);
 }
 .adress .adress-link{
     font-weight: 500;
@@ -258,8 +262,8 @@ h1,h2,h3,p,ul{
     text-align: center;
     padding: 10px 32px;
 
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color var(--animation);
+    border-color: var(--animation);
 }
 .hero-button:hover{
     background-color: var(--bgc-button-color);
@@ -272,8 +276,8 @@ h1,h2,h3,p,ul{
     top: 0;
     left: 0;
     z-index: 999;
-    transition: translate 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: translate var(--animation),
+    opacity var(--animation);
 
     background-color: var(--bg-color-backdrop);
 }
@@ -307,11 +311,153 @@ h1,h2,h3,p,ul{
     background: var(--text-bgc-color);
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
+
+    transition: fill var(--animation);
 }
 .modal-button-close{
     width: 11px;
     height: 11px;
+}
+.modal-button-close:hover,
+.modal-button-close:focus{
+    fill: var(--text-secondary-color);
+}
 
+/* Hero-form */
+.hero-form{
+    display: flex;
+    flex-direction: column;
+
+    padding: 40px;
+    text-align: left;
+}
+.hero-form-title{
+    margin-bottom: 12px;
+
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--title-main-color);
+}
+.hero-form-box{
+    min-width: 448px;
+    min-height: 342px;
+    margin-bottom: 20px;
+}
+.hero-form-list{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+
+}
+.hero-form-input{
+    width: 448px;
+    height: 40px;
+    padding-left: 42px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+
+    transition: border var(--animation);
+}
+.hero-form-input:focus,
+.hero-form-textarea:focus{
+    border-color: var(--text-secondary-color);
+    outline: none;
+}
+.hero-form-input:focus ~ .hero-svg{
+    fill: var(--text-secondary-color);
+}
+.hero-form-field{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.hero-form-field label,
+.hero-form-comment label{
+    margin-bottom: 4px;
+}
+.hero-form-comment{
+    display: flex;
+    flex-direction: column;
+}
+textarea {
+    resize: none;
+}
+.hero-svg{
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    fill: var(--title-main-color);
+
+    transition: fill var(--animation);
+}
+.hero-form-textarea{
+    width: 448px;
+    height: 120px;
+    padding: 12px 16px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+
+    transition: border var(--animation);
+}
+.hero-form-textarea::placeholder{
+    color: var(--color-place-holder);
+}
+.hero-form-privat{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.hero-form-privat input{
+    margin-right: 8px;
+}
+.hero-form-privat input[type='checkbox']{
+    appearance: none;
+}
+.privat-icon{
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    border: 2px solid var(--title-main-color);
+    border-radius: 2px;
+    margin-right: 7px;
+}
+.hero-privat-check:checked ~ .privat-icon {
+    border-color: transparent;
+    background-color: var(--text-secondary-color);
+    background-image: url(../images/svg-index/icon-check.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-origin: border-box;
+}
+.hero-form-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    width: 200px;
+    height: 50px;
+    background: var(--text-secondary-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+
+    transition: background-color var(--animation);
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+    color: var(--text-bgc-color);
+}
+.hero-form-button:hover,
+.hero-form-button:focus{
+    background-color: var(--bgc-button-color);
 }
 
 
@@ -631,8 +777,8 @@ h1,h2,h3,p,ul{
     opacity: 0;
     transform: translateY(100%);
 
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 250ms var(--animation),
+    opacity var(--animation);
 }
 .projects-overlay-text {
     font-size: 18px;
@@ -674,7 +820,7 @@ h1,h2,h3,p,ul{
     letter-spacing: 0.03em;
     color: var(--adress-capacity);
 
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color var(--animation);
 }
 .footer .logo.link{
     display: block;
@@ -741,13 +887,7 @@ h1,h2,h3,p,ul{
     color: var(--text-bgc-color);
 }
 .footer-form-mail{
-    display: flex;
-    flex-direction: column;
-    width: 358px;
-    height: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
-    border-radius: 4px;
+    position: relative;
     margin-right: 12px;
 }
 .footer-form-mail label,
@@ -756,8 +896,32 @@ h1,h2,h3,p,ul{
     line-height: 1.25;
     background-color: inherit;
     color: var(--adress-capacity);
-    padding: 0;
-    border: none;
+}
+.footer-form-input{
+    width: 358px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+        
+    border: 1px solid var(--border-footer);
+    filter: drop-shadow(0px 4px 4px var(--shadow));
+    border-radius: 4px;
+    padding: 15px 16px 15px 16px;
+}
+.footer-form-label{
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    transition: transform 250ms var(--animation);
+}
+.footer-form-input:focus + .footer-form-label,
+.footer-form-input:not(:placeholder-shown) + .footer-form-label{
+    transform: translateY(-46px);
+}
+.footer-form-input:focus{
+    outline: none;
 }
 .footer-button{
     display: flex;
@@ -768,7 +932,7 @@ h1,h2,h3,p,ul{
     height: 50px;
 
     background: #2196F3;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 4px 4px var(--shadow);
     border-radius: 4px;
 }
 .footer-button-text{
@@ -785,57 +949,4 @@ h1,h2,h3,p,ul{
 }
 .footer-form-icon{
     fill: var(--text-bgc-color);
-}
-
-
-
-
-/* не позволяет увеличить размер колонки комментария */
-textarea{
-    resize: none;
-}
-.form{
-    width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    outline: solid 2px red;
-    background-color: rgb(141, 174, 180);
-    color: #000000;
-}
-.form-field{
-    display: flex;
-    flex-direction: column;
-    outline: solid 1px blue;
-    margin: 0 0 20px 0;
-}
-
-.form-field label,
-.form-field input{
-    padding: 5px 10px;
-}
-.form-field input::placeholder{
-    color: #2196F3;
-}
-.form-group{
-    outline: solid 1px tomato;
-    display: flex;
-    flex-direction: column;
-}
-.group-li{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 15px;
-}
-.form-group label{
-    padding: 10px;
-}
-.group-link{
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-.form-group input[type='checkbox']{
-    /* width: 30px;
-    height: 30px; */
 }
