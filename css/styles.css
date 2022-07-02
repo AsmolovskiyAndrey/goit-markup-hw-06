@@ -453,6 +453,7 @@ textarea {
     background: var(--text-secondary-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
+    border: none;
 
     transition: background-color var(--animation);
 
