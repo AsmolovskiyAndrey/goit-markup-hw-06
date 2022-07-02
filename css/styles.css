@@ -338,6 +338,11 @@ h1,h2,h3,p,ul{
     font-size: 20px;
     color: var(--title-main-color);
 }
+.hero-form-label{
+    font-size: 12px;
+    letter-spacing: 0.01em;
+    color: var(--text-firstly-color);
+}
 .hero-form-box{
     min-width: 448px;
     min-height: 342px;
@@ -410,6 +415,8 @@ textarea {
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
+
+    line-height: 1.71;
 }
 .hero-form-privat input{
     margin-right: 8px;
@@ -458,6 +465,10 @@ textarea {
 .hero-form-button:hover,
 .hero-form-button:focus{
     background-color: var(--bgc-button-color);
+}
+.hero-form-link{
+    line-height: 1.71;
+    color: var(--text-secondary-color);
 }
 
 
